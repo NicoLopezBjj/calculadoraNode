@@ -6,6 +6,8 @@ let respuesta = ""
 
 
 function calcular () {
+
+    console.log("\n")
     console.log ("Bienvenido a la calculadora NODE")
     console.log ("1. Suma")
     console.log ("2. Resta")
@@ -14,10 +16,21 @@ function calcular () {
     console.log ("5. Salir")
     respuesta = readLine.question ("Elegi la operacion que deseas realizar, escribe el numero:")
 
+    if (respuesta > "5"){
+        console.log("\n")
+        console.log("Opción inválida.")
+        calcular()   
+    }
+
+    if(respuesta == "5"){
+        console.log("¡Hasta luego!")
+    }
+
     if (respuesta != "5"){
         const primerNumero = readLine.question("Escribi tu primer numero: ")
         const segundoNumero = readLine.question("Escribi tu segundo numero: ")
     
+  
 
     switch(respuesta){
         case "1":
@@ -29,7 +42,7 @@ function calcular () {
             console.log(`El resultado de tu resta es ${result}`)
             break;
         case "3":
-             var result = parseInt(primerNumero) * parseInt(segundoNumero)
+            var result = parseInt(primerNumero) * parseInt(segundoNumero)
             console.log(`El resultado de tu multiplicacion es ${result}`)
             break;
         case "4":

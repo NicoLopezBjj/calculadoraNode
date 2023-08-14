@@ -2,9 +2,11 @@ const readLine = require('readline-sync');
 
 let respuesta = "";
 
+console.log("\n")
 console.log("Bienvenido a la calculadora:");
 
 do {
+    console.log("\n")
     console.log("1. Suma");
     console.log("2. Resta");
     console.log("3. Multiplicacion");
@@ -12,6 +14,15 @@ do {
     console.log("5. Salir");
 
     respuesta = readLine.question("Elegi la operacion que deseas realizar, escribe el numero:");
+
+    if (respuesta > "5"){
+        console.log("Opción inválida.")
+        continue
+    }
+
+    if(respuesta == "5"){
+        console.log("¡Hasta luego!")
+    }
 
     if (respuesta !== "5") {
         const primerNumero = readLine.question("Escribi tu primer numero: ");
